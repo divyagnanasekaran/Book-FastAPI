@@ -1,0 +1,7 @@
+type: web          ← this is a web service
+name: divya-book-api  ← name of your app on Render
+env: python        ← we are using Python
+buildCommand       ← install all packages first
+startCommand       ← how to start the app
+
+#https://book-fastapi.onrender.com/docs
