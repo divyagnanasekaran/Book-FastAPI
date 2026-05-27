@@ -94,11 +94,12 @@ def summarize_book(book_id: int, db: Session = Depends(get_db)):
         Book Content: {book.description}
         """
 
-        # 4. Generate the content using Gemini 1.5 Flash
+        # 4. Call Google Gemini 2.5 Flash
         response = ai_client.models.generate_content(
-            model='gemini-1.5-flash',
-            contents=prompt,
-        )
+             model='gemini-2.5-flash', # <─── CHANGE THIS VALUE HERE
+             contents=prompt,
+)
+
 
         return {
             "book_id": book.id,
