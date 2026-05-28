@@ -9,3 +9,4 @@ class Book(Base):
     author = Column(String)
     price  = Column(Float)
     description = Column(String, nullable=True)#for book summary
+    
