@@ -109,3 +109,16 @@ def summarize_book(book_id: int, db: Session = Depends(get_db)):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Gemini LLM Error: {str(e)}")
+@app.get("/")
+def root():
+    return {
+        "message": "Welcome to Book API!",
+        "docs": "Visit /docs for API documentation",
+        "endpoints": [
+            "GET /books",
+            "GET /books/{id}",
+            "POST /books",
+            "PUT /books/{id}",
+            "DELETE /books/{id}"
+        ]
+    }
